@@ -8,15 +8,15 @@ public class GetEmotions : MonoBehaviour {
     ToneAnalyzer _toneAnalyzer;
     public string _stringToTest;
     public float result_score;
+    public bool analyzingFinish;
+
     // Use this for initialization
     void Start () {
         Credentials credentials = new Credentials("078652c5-dafe-4774-8fa5-d651d3ffb1f2", "lMouYHxZVPjx", "https://gateway.watsonplatform.net/tone-analyzer/api");
         
         _toneAnalyzer = new ToneAnalyzer(credentials);
 
-
-        AnalyzeTone("this is sad.");
-        AnalyzeTone("i am very sad.");
+        StartCoroutine(AnalyzeTone("this is very sad"));
 
     }
 
@@ -25,12 +25,20 @@ public class GetEmotions : MonoBehaviour {
 		
 	}
 
-    public void AnalyzeTone(string _stringToTest)
+    public IEnumerator AnalyzeTone(string _stringToTest)
     {
+        analyzingFinish = false;
         print(_stringToTest);
+
         if (!_toneAnalyzer.GetToneAnalyze(OnGetToneAnalyze, _stringToTest))
             print("Watson Tone Analyzer: Failed to analyze");
-      
+
+        while (analyzingFinish == false)
+        {
+            yield return null;
+        }
+        yield return result_score;
+
     }
 
     public void OnGetToneAnalyze(ToneAnalyzerResponse resp, string data)
@@ -45,6 +53,7 @@ public class GetEmotions : MonoBehaviour {
         float score_joy = get_emotion_score(data, "joy");
 
         result_score = score_sadness * -1 + score_analytical * 1 + score_anger * -2 + score_confident * 1 + score_tentative * 1 + score_fear * -1 + score_joy * 2;
+        analyzingFinish = true;
         print(result_score);
     }
 
