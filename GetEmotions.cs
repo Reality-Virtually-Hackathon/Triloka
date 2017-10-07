@@ -8,7 +8,6 @@ public class GetEmotions : MonoBehaviour {
     ToneAnalyzer _toneAnalyzer;
     public string _stringToTest;
     public float result_score;
-    public bool analyzingFinish;
     // Use this for initialization
     void Start () {
         Credentials credentials = new Credentials("078652c5-dafe-4774-8fa5-d651d3ffb1f2", "lMouYHxZVPjx", "https://gateway.watsonplatform.net/tone-analyzer/api");
@@ -17,20 +16,18 @@ public class GetEmotions : MonoBehaviour {
 
 
         AnalyzeTone("this is sad.");
-        AnalyzeTone("we should be happy.");
-        AnalyzeTone("this should work now.");
-        AnalyzeTone("i dont feel good anymore.");
-        AnalyzeTone("this is not right.");
-        AnalyzeTone("it did not work out well.");
+        AnalyzeTone("i am very sad.");
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
     public void AnalyzeTone(string _stringToTest)
     {
+        print(_stringToTest);
         if (!_toneAnalyzer.GetToneAnalyze(OnGetToneAnalyze, _stringToTest))
             print("Watson Tone Analyzer: Failed to analyze");
       
@@ -38,7 +35,7 @@ public class GetEmotions : MonoBehaviour {
 
     public void OnGetToneAnalyze(ToneAnalyzerResponse resp, string data)
     {
-
+        print(data);
         float score_sadness = get_emotion_score(data, "sadness");
         float score_analytical = get_emotion_score(data, "analytical");
         float score_anger = get_emotion_score(data, "anger");
@@ -47,8 +44,8 @@ public class GetEmotions : MonoBehaviour {
         float score_fear = get_emotion_score(data, "fear");
         float score_joy = get_emotion_score(data, "joy");
 
-        result_score = score_sadness * -1 + score_analytical * 1 + score_anger * -2 + score_confident * 2 + score_tentative * 1 + score_fear * -1 + score_joy * 2;
-
+        result_score = score_sadness * -1 + score_analytical * 1 + score_anger * -2 + score_confident * 1 + score_tentative * 1 + score_fear * -1 + score_joy * 2;
+        print(result_score);
     }
 
     public float get_emotion_score(string data, string emotion)
