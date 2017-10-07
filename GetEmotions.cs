@@ -51,8 +51,11 @@ public class GetEmotions : MonoBehaviour {
         float score_tentative = get_emotion_score(data, "tentative");
         float score_fear = get_emotion_score(data, "fear");
         float score_joy = get_emotion_score(data, "joy");
+        float score_polite = get_emotion_score(data, "polite");
+        float score_impolite = get_emotion_score(data, "impolite");
+        float score_frustrated = get_emotion_score(data, "frustrated");
 
-        result_score = score_sadness * -1 + score_analytical * 1 + score_anger * -2 + score_confident * 1 + score_tentative * 1 + score_fear * -1 + score_joy * 2;
+        result_score = score_sadness * -1 + score_analytical * 1 + score_anger * -2 + score_confident * 0.5f + score_tentative * 1 + score_fear * -1 + score_joy * 2 + score_polite*1 + score_impolite*-1 + score_frustrated*-1;
         analyzingFinish = true;
         print(result_score);
     }
