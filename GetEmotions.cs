@@ -37,7 +37,8 @@ public class GetEmotions : MonoBehaviour {
         {
             yield return null;
         }
-        yield return result_score;
+        int no_words = _stringToTest.Split(' ').Length;
+        yield return result_score*no_words;
 
     }
 
