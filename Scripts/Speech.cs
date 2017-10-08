@@ -9,6 +9,7 @@ public class Speech : MonoBehaviour {
     public Camera centerCamera;
     bool started = false;
 
+
     public GameObject[] storyTellers = new GameObject[2];
 
 
@@ -27,11 +28,8 @@ public class Speech : MonoBehaviour {
 
         speech_recog.DictationComplete += (completionCause) =>
         {
-            if (completionCause != DictationCompletionCause.Complete)
-            {
-                Debug.Log("Dictation completed unsuccessfully: " + completionCause);
-            }
-            speech_recog.Start();
+            Debug.Log("Dictation completed" + completionCause);
+            started = false;
         };
 
         speech_recog.DictationError += (error, hresult) =>
@@ -43,8 +41,10 @@ public class Speech : MonoBehaviour {
 
     public void Update()
     {
+
         if (!started && this.GetComponent<Connection>().ready) { 
             speech_recog.Start();
+            print("Speech Rocog strarted!");
             started = true;
         }
 
@@ -72,6 +72,7 @@ public class Speech : MonoBehaviour {
     private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
 	{
         if (text.ToLower().Equals("change")){
+            speech_recog.Stop();
             FindObjectOfType<PullUpScript>().pullUp();
         }
         // do something

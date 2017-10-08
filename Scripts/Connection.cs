@@ -13,7 +13,7 @@ public class Connection : MonoBehaviour {
 	StreamWriter sw;
 	Thread recvT;
     public bool ready = false;
-    bool running = true;
+    public bool running = true;
 
 	string temp;
 	// Use this for initialization
