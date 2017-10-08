@@ -17,9 +17,30 @@ Triloka blends the three realms of the virtual, physical and the spiritual world
   <li> Hopelessness: Motivating and engaging incentives like unlocking more environments if postive thoughts are spoken, slowly giving hope
 </ul>
 
-# The free third party SDKs we used include:
+# Free third party usages:
 
 <u1>
-  <li> Microsoft Speech API - 
-  <li> IBM Watson Tone anayser - 
-  <li> Oculus SDK - 
+  <li> SDKs
+  <ul>
+    <li> Microsoft Speech API
+    <li> IBM Watson Tone anayser
+    <li> Oculus SDK
+  </ul>
+  <li> Libraries
+  <ul>  
+    <li> fbchat
+  </ul>
+  <li> Assets
+  <ul>
+    <li> High Resolution Wall Texture
+    <li> Nature Starter Kit
+    <li> PBR Ground Material
+    <li> Rock and Boulders
+    <li> SkyBox 1.0
+    <li> Pre-mediteranian
+    <li> Simple Dynamic Cloud
+    <li> Mountain Creek
+    <li> Game Ready Boat
+  </ul>
+</ul>
+    
