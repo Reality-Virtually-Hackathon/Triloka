@@ -4,13 +4,13 @@ Triloka blends the three realms of the virtual, physical and the spiritual world
 
 # Our Focus.
 
-## The most important things that people need to be away from is
+## The negative feelings faced and the way they are tackled:
 
 <ul>
-  <li> Loneliness: 
-  <li> Sadness: 
-  <li> Guilt: 
-  <li> Lack of Interest in daily activities: 
-  <li> Dificulty concentrating:
-  <li> Hopelessness: 
+  <li> Loneliness: Meeting new people around the campfire and opening up without the fear of being judged or having preconceptions.
+  <li> Sadness: Lulling soft music in the background that calms the user
+  <li> Guilt: Listening to how other people overcame their depression and trying to empathize with them
+  <li> Lack of Interest in daily activities: Energetic activities like canoeing that can revitalise the mind
+  <li> Dificulty concentrating: Meditation session under serene conditions
+  <li> Hopelessness: Motivating and engaging incentives like unlocking more environments if postive thoughts are spoken, slowly giving hope
 </ul>
