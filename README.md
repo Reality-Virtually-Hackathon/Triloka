@@ -11,6 +11,6 @@ Triloka blends the three realms of the virtual, physical and the spiritual world
   <li> Sadness: Lulling soft music in the background that calms the user
   <li> Guilt: Listening to how other people overcame their depression and trying to empathize with them
   <li> Lack of Interest in daily activities: Energetic activities like canoeing that can revitalise the mind
-  <li> Dificulty concentrating: Meditation session under serene conditions
+  <li> Difficulty concentrating: Meditation session under serene conditions
   <li> Hopelessness: Motivating and engaging incentives like unlocking more environments if postive thoughts are spoken, slowly giving hope
 </ul>
