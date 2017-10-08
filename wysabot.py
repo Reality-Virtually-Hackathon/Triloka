@@ -7,10 +7,11 @@ class wysaBot:
         with open("mseal", "rb") as f:
             mseal = f.read().decode()
         f.close()
-        self.client = Client("raghav0296@gmail.com", password=mseal)
+        # self.client = Client("raghav0296@gmail.com", password=mseal)
+        self.client = Client("8573088029", password="triloka96")
         self.thread_id = self.client.searchForPages("Wysa - happiness chatbot therapy")[0].uid
         self.prev_msg = ""
-        self.retrieve_messages()
+        self.prev_msg = self.client.fetchThreadMessages(thread_id=self.thread_id, limit=1)[0].text
 
     def send_message(self, message):
         self.client.sendMessage(message, thread_id=self.thread_id, thread_type=ThreadType.USER)
@@ -37,3 +38,4 @@ class wysaBot:
         if "Say #MOOD or #ANGRY" in message:
             message = ""
         return message
+
