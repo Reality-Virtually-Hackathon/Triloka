@@ -1,14 +1,15 @@
 from fbchat import Client
 from fbchat.models import *
 
+
 class wysaBot:
-    def __init__(self):
+    def __init__(self, prev_msg):
         with open("mseal", "rb") as f:
             mseal = f.read().decode()
         f.close()
-        self.client = Client("raghav0296@gmail.com",password=mseal)
+        self.client = Client("raghav0296@gmail.com", password=mseal)
         self.thread_id = self.client.searchForPages("Wysa - happiness chatbot therapy")[0].uid
-        self.prev_msg = "Sorry! I didnt understand that. Lets do it again."
+        self.prev_msg = prev_msg
 
     def send_message(self, message):
         self.client.sendMessage(message, thread_id=self.thread_id, thread_type=ThreadType.USER)
@@ -18,13 +19,20 @@ class wysaBot:
         all_messages = self.client.fetchThreadMessages(thread_id=self.thread_id, limit=10)
         message_texts = []
         for i in all_messages:
-            if i.text==self.prev_msg:
+            if i.text == self.prev_msg:
                 break
-            print(i.text)
+            i.text = self.filter_messages(i.text)
             message_texts.append(i.text)
         self.prev_msg = all_messages[0].text
-        print(message_texts)
-        message_texts = str.join("",message_texts[::-1])
-        print(message_texts)
+        message_texts = str.join("", message_texts[::-1])
+        return message_texts
 
-wysaBot().retrieve_messages()
+    def filter_messages(self, message):
+        message = str(message)
+        message.replace("Raghav","")
+        message.replace("Please choose an option from below.","")
+        if "Here are some commands I understand" in message:
+            message = ""
+        if "Say #MOOD or #ANGRY" in message:
+            message = ""
+        return message
