@@ -16,3 +16,10 @@ Triloka blends the three realms of the virtual, physical and the spiritual world
   <li> Difficulty concentrating: Meditation session under serene conditions
   <li> Hopelessness: Motivating and engaging incentives like unlocking more environments if postive thoughts are spoken, slowly giving hope
 </ul>
+
+# The free third party SDKs we used include:
+
+<u1>
+  <li> Microsoft Speech API - 
+  <li> IBM Watson Tone anayser - 
+  <li> Oculus SDK - 
