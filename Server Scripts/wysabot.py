@@ -4,11 +4,11 @@ from fbchat.models import *
 
 class wysaBot:
     def __init__(self):
-        with open("mseal", "rb") as f:
-            mseal = f.read().decode()
-        f.close()
-        self.client = Client("raghav0296@gmail.com", password=mseal)
-        # self.client = Client("8573088029", password="triloka96")
+        #with open("mseal", "rb") as f:
+        #    mseal = f.read().decode()
+        #f.close()
+        #self.client = Client("raghav0296@gmail.com", password=mseal)
+        self.client = Client("8573088029", password="triloka96")
         self.thread_id = self.client.searchForPages("Wysa - happiness chatbot therapy")[0].uid
         self.prev_msg = ""
         self.prev_msg = self.retrieve_messages()
