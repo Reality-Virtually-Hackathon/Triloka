@@ -1,4 +1,4 @@
-![alt text](Triloka/logoView.png)
+![alt text](https://github.com/Reality-Virtually-Hackathon/Triloka/blob/master/logoView.png)
 
 # Objective
 
